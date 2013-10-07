@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Habrahabr: Post Length
-// @version     1.0
+// @version     1.0.1
 // @description Augments window title with the post length and inserts progress meter into the page itself.
 // @include     http://habrahabr.ru/post/*/
 // @include     http://habrahabr.ru/company/*/blog/*/
@@ -29,9 +29,9 @@
         return div;
     }());
     var updateIndicator = new function() {
-        var clientHeight = document.documentElement.clientHeight;
+        var documentElement = document.documentElement;
         return function() {
-            var position = window.pageYOffset + clientHeight / 2 - header.offsetHeight;
+            var position = window.pageYOffset + documentElement.clientHeight / 2 - header.offsetHeight;
             var progress = Math.floor(position / computeLength() * 100);
             indicator.innerText = progress <= 100 ? progress + '%' : '';
         };
