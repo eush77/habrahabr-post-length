@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name        Habrahabr: Post Length
+// @name        Habrahabr: Progress Indicator
 // @version     1.0.1
-// @description Augments window title with the post length and inserts progress meter into the page itself.
+// @description Adds simple progress meter to the left (e.g. 45%). Augments window title with the post's length.
 // @include     http://habrahabr.ru/post/*/
 // @include     http://habrahabr.ru/company/*/blog/*/
 // ==/UserScript==
