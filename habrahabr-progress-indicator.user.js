@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        Habrahabr: Progress Indicator
-// @version     1.0.1
+// @version     1.0.2
 // @description Adds simple progress meter to the left (e.g. 45%). Augments window title with the post's length.
 // @include     http://habrahabr.ru/post/*/
 // @include     http://habrahabr.ru/company/*/blog/*/
@@ -8,6 +8,9 @@
 
 !function() {
     var header = document.getElementById('header');
+    if (!header) {
+        return;
+    }
     var computeLength = new function() {
         var originalTitle = document.title;
         var infopanel = document.getElementsByClassName('infopanel_wrapper')[0];
